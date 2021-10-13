@@ -4,25 +4,37 @@
 #include <string>
 #include "CreateObject.h"
 
+
 class Factory
 {
     public:
-    virtual CreateObject* CreateApple() = 0;
-    virtual CreateObject* CreateBanana() = 0;
-    virtual CreateObject* CreateGrape() = 0;
+    virtual CreateObject *CreateBuild() = 0;
     private:
 
 };
 
-class FruitFactory : public Factory{
+class BrickFactory : public Factory{
     public:
-    CreateObject* CreateApple(){
-        return new Apple();
+    CreateObject* CreateBuild(){
+        return new Brick();
     }
-    CreateObject* CreateBanana(){
-        return new Banana();
+};
+
+class StoneFactory : public Factory{
+    public:
+    CreateObject* CreateBuild(){
+        return new Stone();
     }
-    CreateObject* CreateGrape(){
-        return new Grape();
+};
+class ConcreteFactory : public Factory{
+    public:
+    CreateObject* CreateBuild(){
+        return new Concrete();
     }
-}
+};
+class WoodFactory : public Factory{
+    public:
+    CreateObject* CreateBuild(){
+        return new Wood();
+    }
+};

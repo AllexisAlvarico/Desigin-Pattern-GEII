@@ -7,30 +7,32 @@
 class CreateObject
 {
     public:
-    CreateObject();
-    virtual ~CreateObject();
+    ~CreateObject();
     virtual void draw() = 0;
-    void Print() {std::cout << "Printing Apple" << std::endl;}
+    void Print() {std::cout << "Printing Brick" << std::endl;}
 
-    private:
-    // add something??
 };
 
-class Apple : public CreateObject
+class Brick : public CreateObject
 {
     public:
-    void draw(){std::cout << "Apple drawn";}
+    void draw(){std::cout << "Brick drawn\n";}
 };
 
-class Banana : public CreateObject
+class Stone : public CreateObject
 {
     public:
-    void draw(){std::cout << "Banana drawn";}
+    void draw(){std::cout << "Stone drawn\n";}
 };
 
-class Grape : public CreateObject
+class Concrete : public CreateObject
 {
     public:
-    void draw(){std::cout << "Grape drawn";}
+    void draw(){std::cout << "Concrete drawn\n";}
 };
 
+class Wood : public CreateObject
+{
+    public:
+    void draw(){std::cout << "Wood drawn\n";}
+};
